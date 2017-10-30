@@ -28,6 +28,7 @@ public class CheckingPage extends BasePage {
     }
 
     public boolean checkNitems(int productCount){
+        waiting(products.get(0));
         return products.size() == productCount;
     }
 

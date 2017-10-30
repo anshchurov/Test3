@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MainPage extends BasePage{
 
-    @FindBy(xpath = "data-id='market'")
+    @FindBy(xpath = "//a[@data-id='market']")
     public WebElement marketBtn;
 
     @FindBy(xpath = "//a[@class='link topmenu__link'][text()='Электроника']")
@@ -22,6 +22,7 @@ public class MainPage extends BasePage{
     }
 
     public void setMarketBtn() {
+        waiting(marketBtn);
         click(marketBtn);
     }
 
