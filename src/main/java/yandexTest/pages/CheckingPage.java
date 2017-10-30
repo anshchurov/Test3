@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
@@ -21,6 +22,10 @@ public class CheckingPage extends BasePage {
 
     @FindBy(xpath = "//h1[@class='title title_size_28 title_bold_yes']")
     public WebElement productTitle;
+
+    public CheckingPage() {
+        PageFactory.initElements(driver, this);
+    }
 
     public boolean checkNitems(int productCount){
         return products.size() == productCount;

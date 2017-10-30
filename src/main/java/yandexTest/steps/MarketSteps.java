@@ -6,20 +6,21 @@ import yandexTest.pages.MarketPage;
 
 public class MarketSteps {
 
+    private MarketPage marketPage = new MarketPage();
+
     @Step("Ввести минимальную цену телевизора, равную {0}")
     public void enterPrice(String price) {
-        new MarketPage().setPriceInput(price);
+        marketPage.setPriceInput(price);
     }
 
     @Step("Выбрать производителей")// круче с параметрами, но это пусть будет в кукумбере
     public void chooseCorp(){
-        MarketPage marketPage = new MarketPage();
         marketPage.setLgCheck();
         marketPage.setSumsungCheck();
     }
 
     @Step("Принять фильтры")
     public void applyFilters(){
-        new MarketPage().setApplyBtn();
+        marketPage.setApplyBtn();
     }
 }

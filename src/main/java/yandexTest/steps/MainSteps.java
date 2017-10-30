@@ -5,18 +5,20 @@ import yandexTest.pages.MainPage;
 
 public class MainSteps {
 
+    private MainPage mainPage = new MainPage();
+
     @Step("Выбрать маркет")
     public void clickMarket(){
-        new MainPage().setMarketBtn();
+        mainPage.setMarketBtn();
     }
 
     @Step("Выбрать раздел Электроника")
     public void clickElectronic(){
-        new MainPage().setElectricBtn();
+        mainPage.setElectricBtn();
     }
 
     @Step("Выбрать раздел Телевизоры")
     public void clickTV(){
-        new MainPage().setTvBtn();
+        mainPage.setTvBtn();
     }
 }
