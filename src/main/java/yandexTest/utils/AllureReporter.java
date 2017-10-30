@@ -4,9 +4,10 @@ import gherkin.formatter.model.Result;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import ru.yandex.qatools.allure.Allure;
+import ru.yandex.qatools.allure.annotations.Attachment;
 import ru.yandex.qatools.allure.events.MakeAttachmentEvent;
 
-import static steps.BaseSteps.getDriver;
+import static yandexTest.steps.BaseSteps.getDriver;
 
 
 /**
@@ -22,7 +23,7 @@ public class AllureReporter extends ru.yandex.qatools.allure.cucumberjvm.AllureR
     }
 
 
-
+    @Attachment
     public void takeScreenshot(Result step) {
         if (getDriver() != null) {
             Allure.LIFECYCLE.fire(new MakeAttachmentEvent(((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.BYTES),

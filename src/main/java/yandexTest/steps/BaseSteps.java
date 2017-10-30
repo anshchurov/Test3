@@ -1,7 +1,7 @@
 package yandexTest.steps;
 
-import org.junit.After;
-import org.junit.Before;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import yandexTest.utils.TestProperties;
@@ -10,15 +10,15 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class BaseSteps {
-    public WebDriver driver;
-    public Properties properties = TestProperties.getInstance().getProperties();
+    public static WebDriver driver;
+    public static Properties properties = TestProperties.getInstance().getProperties();
 
-    public WebDriver getDriver() {
+    public static WebDriver getDriver() {
         return driver;
     }
 
-    @Before
-    public void before() throws Exception {
+    @BeforeClass
+    public static void before() throws Exception {
         System.setProperty("webdriver.chrome.driver", properties.getProperty("webdriver.chrome.driver"));
 
         driver = new ChromeDriver();
@@ -27,8 +27,8 @@ public class BaseSteps {
 
         driver.get(properties.getProperty("app.url"));
     }
-    @After
-    public void after() {
+    @AfterClass
+    public static void after() {
         driver.quit();
     }
 }

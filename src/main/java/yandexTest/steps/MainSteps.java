@@ -3,7 +3,7 @@ package yandexTest.steps;
 import ru.yandex.qatools.allure.annotations.Step;
 import yandexTest.pages.MainPage;
 
-public class MainSteps extends BaseSteps {
+public class MainSteps {
 
     @Step("Выбрать маркет")
     public void clickMarket(){

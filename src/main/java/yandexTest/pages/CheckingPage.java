@@ -1,5 +1,6 @@
 package yandexTest.pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,12 +22,16 @@ public class CheckingPage extends BasePage {
     @FindBy(xpath = "//h1[@class='title title_size_28 title_bold_yes']")
     public WebElement productTitle;
 
-    public boolean check12items(int productCount){
+    public boolean checkNitems(int productCount){
         return products.size() == productCount;
     }
 
-    public void enterProductForSearchBar(int productIndex){
-        productName = products.get(productIndex).findElement(By.xpath("./a")).getText();
+    public String rememberProductForSearchBar(int productIndex){
+        String productName = products.get(productIndex).findElement(By.xpath("./a")).getText();
+        return productName;
+    }
+
+    public void enterRememberedProduct(String productName){
         fillField(searchInput, productName);
     }
 
@@ -34,5 +39,8 @@ public class CheckingPage extends BasePage {
         click(findBtn);
     }
 
-
+    public void checkProductTitle(String rememberedTitle){
+        Assert.assertEquals("Наименование товара не совпадает с введённым!",
+                productTitle.getText(), rememberedTitle);
+    }
 }

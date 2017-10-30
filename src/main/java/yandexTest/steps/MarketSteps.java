@@ -4,7 +4,7 @@ import ru.yandex.qatools.allure.annotations.Step;
 import yandexTest.pages.MainPage;
 import yandexTest.pages.MarketPage;
 
-public class MarketSteps extends BaseSteps {
+public class MarketSteps {
 
     @Step("Ввести минимальную цену телевизора, равную {0}")
     public void enterPrice(String price) {
