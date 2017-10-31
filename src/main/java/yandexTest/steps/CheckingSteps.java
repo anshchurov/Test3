@@ -24,7 +24,7 @@ public class CheckingSteps {
         checkingPage.enterRememberedProduct(rememberedTitle);
     }
 
-    @Step("Найти товар")
+    @Step("Найти товар ")
     public void findProduct(){
         checkingPage.findProduct();
     }

@@ -8,7 +8,7 @@ import yandexTest.steps.MarketSteps;
 public class YaMarketTest extends BaseSteps{
 
     @Test
-    @Title("Проверка телевизора в маркете")
+    //@Title("Проверка телевизора в маркете")
     public void Test(){
 
         MainSteps mainSteps = new MainSteps();
@@ -20,7 +20,8 @@ public class YaMarketTest extends BaseSteps{
         mainSteps.clickTV();
 
         marketSteps.enterPrice("20000");
-        marketSteps.chooseCorp();
+        String[] prodNames = {"Samsung", "LG"};
+        marketSteps.chooseCorp(prodNames);
         marketSteps.applyFilters();
 
         checkingSteps.checkElements(12);

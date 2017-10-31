@@ -20,7 +20,7 @@ public class CheckingPage extends BasePage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement findBtn;
 
-    @FindBy(xpath = "//h1[@class='title title_size_28 title_bold_yes']")
+    @FindBy(xpath = "//h1[@contains(@class, 'title')]")
     public WebElement productTitle;
 
     public CheckingPage() {
